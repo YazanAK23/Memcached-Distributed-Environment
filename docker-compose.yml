@@ -1,0 +1,26 @@
+version: '3'
+services:
+  memcached-node1:
+    image: memcached:latest
+    ports:
+      - "11211:11211"
+    networks:
+      - memcached-network
+
+  memcached-node2:
+    image: memcached:latest
+    ports:
+      - "11212:11211"
+    networks:
+      - memcached-network
+
+  memcached-node3:
+    image: memcached:latest
+    ports:
+      - "11213:11211"
+    networks:
+      - memcached-network
+
+networks:
+  memcached-network:
+    driver: bridge
